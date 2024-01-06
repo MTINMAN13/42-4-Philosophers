@@ -1,4 +1,4 @@
-NAME = philosophers
+NAME = philo
 
 RANDOM_DIGIT := $(shell echo $$((RANDOM % 10)))
 
@@ -18,26 +18,25 @@ INCLUDE = include
 
 # Sources
 SRC_FILES = philosophers \
+			philosophers_utils
 
 SRC = $(addsuffix .c, $(SRC_FILES))
 OBJ = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(SRC_FILES)))
 
-LIBFT = libft.a
-
 # Rule to compile .c files into .o files
-all: $(NAME)
+all: 	$(NAME)
+		bonus
 
 $(OBJ_DIR)/%.o: %.c
-	$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@ 
+	$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
 
 # Rule to build the executable  and run
 $(NAME): libft $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $(OBJ) $(LIBFT) $(LFLAGS)
-	# @clear 
+	# @clear
 	@echo "$(CLR2)rdy$(DEF_COLOR)"
 
-libft:
-		@ make -C libft/
+bonus:
 
 clean:
 		@ $(RM) $(OBJ)
