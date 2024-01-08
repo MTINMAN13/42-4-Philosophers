@@ -6,7 +6,7 @@
 /*   By: mman <mman@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 17:52:25 by mman              #+#    #+#             */
-/*   Updated: 2024/01/06 23:02:16 by mman             ###   ########.fr       */
+/*   Updated: 2024/01/08 17:16:26 by mman             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ with a mutex for each of them.
 + • Global variables are forbidden!
 +
 */
+
+int main
 
 
 #include "philosophers.h"
