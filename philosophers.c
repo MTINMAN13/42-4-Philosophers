@@ -6,9 +6,11 @@
 /*   By: mman <mman@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 17:52:25 by mman              #+#    #+#             */
-/*   Updated: 2024/01/08 17:16:26 by mman             ###   ########.fr       */
+/*   Updated: 2024/01/08 19:05:04 by mman             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// https://www.youtube.com/watch?v=d9s_d28yJq0&list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2
 
 /* Memory Manipulation:
  *   memset: Set a block of memory to a specific value.
@@ -29,6 +31,15 @@
  *   pthread_create: Create a new thread.
  *   pthread_detach: Detach a thread, allowing it to run independently.
  *   pthread_join: Wait for a thread to terminate.
+ *
+ * 	--> Mutexes are short for 'mutual exclusion'
+ * 		pthread_mutex_init: Initializes a mutex before it can be used.
+		pthread_mutex_destroy: Destroys a mutex when it is no longer needed.
+		pthread_mutex_lock: Locks a mutex, allowing the calling thread to proceed
+						if the mutex is currently not locked by any other thread.
+						If the mutex is already locked, the calling thread will
+						be blocked until the mutex becomes available.
+		pthread_mutex_unlock: Unlocks a mutex, releasing it for other threads to acquire.
  *
  * Time Handling:
  *   usleep: Suspend execution of the calling thread for a specified time.
@@ -84,6 +95,8 @@ with a mutex for each of them.
 + • Global variables are forbidden!
 +
 */
+
+
 
 int main
 

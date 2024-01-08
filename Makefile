@@ -7,7 +7,7 @@ CLR2 = \033[0;32m  # Orangeish color with a random last digit
 CLR1 = \033[0;48m  # Complementary orangeish color with a random last digit
 
 
-CC = cc
+CC = cc -g -pthread
 CFLAGS = #-Wall -Werror -Wextra
 RM = rm -rf
 
