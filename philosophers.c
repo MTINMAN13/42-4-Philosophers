@@ -6,7 +6,7 @@
 /*   By: mman <mman@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 17:52:25 by mman              #+#    #+#             */
-/*   Updated: 2024/01/13 03:29:19 by mman             ###   ########.fr       */
+/*   Updated: 2024/01/13 03:42:26 by mman             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,11 @@ with a mutex for each of them.
 
 
 int main(void)
+{
+	return (EXIST?);
+}
+
+
 
 // - create a thread (PHILOSPHER)
 // - fork this thread (AMOUNT OF PHILOSOPHERS)
