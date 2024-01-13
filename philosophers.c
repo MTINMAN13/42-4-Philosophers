@@ -6,11 +6,10 @@
 /*   By: mman <mman@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 17:52:25 by mman              #+#    #+#             */
-/*   Updated: 2024/01/13 03:19:39 by mman             ###   ########.fr       */
-=======
-/*   Updated: 2024/01/08 19:05:04 by mman             ###   ########.fr       */
+/*   Updated: 2024/01/13 03:24:38 by mman             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 // https://www.youtube.com/watch?v=d9s_d28yJq0&list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2
 
@@ -101,38 +100,27 @@ with a mutex for each of them.
 
 int main(void)
 
+// - create a thread (PHILOSPHER)
+// - fork this thread (AMOUNT OF PHILOSOPHERS)
+// - each PHILOSOPHER creates a fork
+// - when philosopher picks up a fork, it is mutexed
+// - when philospher picks up two forks, they start eating
+// - when they finish, they go to sleep (and they )release both forks
+// - when they finish sleeping, they start thinking
+// - when they think for time_to_die since last time, when they ate (or simulation start) they die (ending simulation)
+// (Each fork needs to be correctly picked up, On the right and on the left)
 
-  /*
-
-<<<<<<< okay
-- create a thread (PHILOSPHER)
-- fork this thread (AMOUNT OF PHILOSOPHERS)
-- each PHILOSOPHER creates a fork
-- when philosopher picks up a fork, it is mutexed
-- when philospher picks up two forks, they start eating
-- when they finish, they go to sleep (and they )release both forks
-- when they finish sleeping, they start thinking
-- when they think for time_to_die since last time, when they ate (or simulation start) they die (ending simulation)
-(Each fork needs to be correctly picked up, On the right and on the left)
-
-- philosophers dont speak with others, so no fork putdowns, or no begging
-- forks are in the middle
-- available fork (number) is represented by a semaphore
-- main process is XY
-- each philosopher is a process
-- main process is not philosopher
+// - philosophers dont speak with others, so no fork putdowns, or no begging
+// - forks are in the middle
+// - available fork (number) is represented by a semaphore
+// - main process is XY
+// - each philosopher is a process
+// - main process is not philosopher
 
 int main(void)
 {
 
 	return (EXIT_SUCCESS);
 }
-=======
-
-int main
->>>>>>> main
-
-
-*/
 #include "philosophers.h"
 
