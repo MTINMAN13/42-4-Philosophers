@@ -6,7 +6,7 @@
 /*   By: mman <mman@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 17:52:25 by mman              #+#    #+#             */
-/*   Updated: 2024/01/13 03:27:08 by mman             ###   ########.fr       */
+/*   Updated: 2024/01/13 03:29:19 by mman             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,13 +115,4 @@ int main(void)
 // - available fork (number) is represented by a semaphore
 // - main process is XY
 // - each philosopher is a process
-// - main process is not philosopher
-
-int main(void)
-{
-	pthread_t hi;
-
-	return (EXIT_SUCCESS);
-}
-#include "philosophers.h"
 

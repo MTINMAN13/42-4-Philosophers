@@ -6,7 +6,7 @@
 /*   By: mman <mman@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 18:06:34 by mman              #+#    #+#             */
-/*   Updated: 2024/01/08 18:49:49 by mman             ###   ########.fr       */
+/*   Updated: 2024/01/13 03:29:05 by mman             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <pthread.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <cstdlib.h>
 
 // util
 int	ft_atoi(const char *str);
