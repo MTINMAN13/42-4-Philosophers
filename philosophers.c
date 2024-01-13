@@ -6,7 +6,7 @@
 /*   By: mman <mman@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 17:52:25 by mman              #+#    #+#             */
-/*   Updated: 2024/01/08 17:16:26 by mman             ###   ########.fr       */
+/*   Updated: 2024/01/13 03:15:13 by mman             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
  *   exit: Terminate the calling process.
  *   waitpid: Wait for a specific child process to terminate.
  *
- * Threading:
+ * Threading:                                       (REGULAR ONLY)
  *   pthread_create: Create a new thread.
  *   pthread_detach: Detach a thread, allowing it to run independently.
  *   pthread_join: Wait for a thread to terminate.
@@ -34,7 +34,7 @@
  *   usleep: Suspend execution of the calling thread for a specified time.
  *   gettimeofday: Get the current time and date.
  *
- * Inter-Process Communication and Synchronization:
+ * Inter-Process Communication and Synchronization: (BONUS ONLY)
  *   sem_open: Open a named semaphore.
  *   sem_close: Close a named semaphore.
  *   sem_post: Increment the value of a semaphore.
@@ -85,7 +85,28 @@ with a mutex for each of them.
 +
 */
 
-int main
+
+- create a thread (PHILOSPHER)
+- fork this thread (AMOUNT OF PHILOSOPHERS)
+- each PHILOSOPHER creates a fork
+- when philosopher picks up a fork, it is mutexed
+- when philospher picks up two forks, they start eating
+- when they finish, they go to sleep (and they )release both forks
+- when they finish sleeping, they start thinking
+- when they think for time_to_die since last time, when they ate (or simulation start) they die (ending simulation)
+(Each fork needs to be correctly picked up, On the right and on the left)
+
+- philosophers dont speak with others, so no fork putdowns, or no begging
+- forks are in the middle
+- available fork (number) is represented by a semaphore
+- main process is XY
+- each philosopher is a process
+- main process is not philosopher
+
+int main(void)
+{
+
+}
 
 
 #include "philosophers.h"
