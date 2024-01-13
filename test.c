@@ -4,6 +4,8 @@
 #include <sys/time.h>
 #include <pthread.h>
 
+// pthread_mutex_trylock is not available for the excercise, only custom implementation available
+
 #define MAX_PHILOSOPHERS 11
 #define DEFAULT_NUMBER_OF_PHILOSOPHERS 5
 #define DEFAULT_OPTIONAL -1

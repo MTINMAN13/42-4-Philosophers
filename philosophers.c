@@ -6,7 +6,7 @@
 /*   By: mman <mman@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 17:52:25 by mman              #+#    #+#             */
-/*   Updated: 2024/01/13 15:43:03 by mman             ###   ########.fr       */
+/*   Updated: 2024/01/13 15:48:13 by mman             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,17 @@
  *   write: Write data to a file descriptor.
  *
  * Process Control:
- *   fork: Create a new process by duplicating the calling process.
- *   kill: Send a signal to a process or a group of processes.
+ *   fork: Create a new process by duplicating the calling process.  (BONUS ONLY)
+ *   kill: Send a signal to a process or a group of processes.       (BONUS ONLY)
+ *   waitpid: Wait for a specific child process to terminate.        (BONUS ONLY)
+
  *   exit: Terminate the calling process.
- *   waitpid: Wait for a specific child process to terminate.
  *
  * Threading:                                       (REGULAR ONLY)
- *   pthread_create: Create a new thread.
- *   pthread_detach: Detach a thread, allowing it to run independently.
- *   pthread_join: Wait for a thread to terminate.
+ *   pthread_create: Create a new thread.           (REGULAR ONLY)
+ *   pthread_detach: Detach a thread, allowing it to run independently.     (REGULAR ONLY)
+ *   pthread_join: Wait for a thread to terminate.                          (REGULAR ONLY)
+ *
  *
  * 	--> Mutexes are short for 'mutual exclusion'
  * 		pthread_mutex_init: Initializes a mutex before it can be used.
@@ -46,12 +48,12 @@
  *   usleep: Suspend execution of the calling thread for a specified time.
  *   gettimeofday: Get the current time and date.
  *
- * Inter-Process Communication and Synchronization: (BONUS ONLY)
- *   sem_open: Open a named semaphore.
- *   sem_close: Close a named semaphore.
- *   sem_post: Increment the value of a semaphore.
- *   sem_wait: Decrement the value of a semaphore, blocking if necessary.
- *   sem_unlink: Remove a named semaphore from the system.
+ * Inter-Process Communication and Synchronization:    (BONUS ONLY)
+ *   sem_open: Open a named semaphore.                 (BONUS ONLY)
+ *   sem_close: Close a named semaphore.               (BONUS ONLY)
+ *   sem_post: Increment the value of a semaphore.     (BONUS ONLY)
+ *   sem_wait: Decrement the value of a semaphore, blocking if necessary.    (BONUS ONLY)
+ *   sem_unlink: Remove a named semaphore from the system.                   (BONUS ONLY)
  *
  */
 
