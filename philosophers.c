@@ -6,6 +6,8 @@
 /*   By: mman <mman@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 17:52:25 by mman              #+#    #+#             */
+/*   Updated: 2024/01/13 03:19:39 by mman             ###   ########.fr       */
+=======
 /*   Updated: 2024/01/08 19:05:04 by mman             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -27,7 +29,7 @@
  *   exit: Terminate the calling process.
  *   waitpid: Wait for a specific child process to terminate.
  *
- * Threading:
+ * Threading:                                       (REGULAR ONLY)
  *   pthread_create: Create a new thread.
  *   pthread_detach: Detach a thread, allowing it to run independently.
  *   pthread_join: Wait for a thread to terminate.
@@ -45,7 +47,7 @@
  *   usleep: Suspend execution of the calling thread for a specified time.
  *   gettimeofday: Get the current time and date.
  *
- * Inter-Process Communication and Synchronization:
+ * Inter-Process Communication and Synchronization: (BONUS ONLY)
  *   sem_open: Open a named semaphore.
  *   sem_close: Close a named semaphore.
  *   sem_post: Increment the value of a semaphore.
@@ -97,9 +99,10 @@ with a mutex for each of them.
 */
 
 
+int main(void)
 
-int main
 
 
+*/
 #include "philosophers.h"
 
