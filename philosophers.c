@@ -7,8 +7,12 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 17:52:25 by mman              #+#    #+#             */
 /*   Updated: 2024/01/13 03:19:39 by mman             ###   ########.fr       */
+=======
+/*   Updated: 2024/01/08 19:05:04 by mman             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// https://www.youtube.com/watch?v=d9s_d28yJq0&list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2
 
 /* Memory Manipulation:
  *   memset: Set a block of memory to a specific value.
@@ -29,6 +33,15 @@
  *   pthread_create: Create a new thread.
  *   pthread_detach: Detach a thread, allowing it to run independently.
  *   pthread_join: Wait for a thread to terminate.
+ *
+ * 	--> Mutexes are short for 'mutual exclusion'
+ * 		pthread_mutex_init: Initializes a mutex before it can be used.
+		pthread_mutex_destroy: Destroys a mutex when it is no longer needed.
+		pthread_mutex_lock: Locks a mutex, allowing the calling thread to proceed
+						if the mutex is currently not locked by any other thread.
+						If the mutex is already locked, the calling thread will
+						be blocked until the mutex becomes available.
+		pthread_mutex_unlock: Unlocks a mutex, releasing it for other threads to acquire.
  *
  * Time Handling:
  *   usleep: Suspend execution of the calling thread for a specified time.
@@ -86,29 +99,10 @@ with a mutex for each of them.
 */
 
 
-- create a thread (PHILOSPHER)
-- fork this thread (AMOUNT OF PHILOSOPHERS)
-- each PHILOSOPHER creates a fork
-- when philosopher picks up a fork, it is mutexed
-- when philospher picks up two forks, they start eating
-- when they finish, they go to sleep (and they )release both forks
-- when they finish sleeping, they start thinking
-- when they think for time_to_die since last time, when they ate (or simulation start) they die (ending simulation)
-(Each fork needs to be correctly picked up, On the right and on the left)
-
-- philosophers dont speak with others, so no fork putdowns, or no begging
-- forks are in the middle
-- available fork (number) is represented by a semaphore
-- main process is XY
-- each philosopher is a process
-- main process is not philosopher
-
 int main(void)
-{
-
-	return (EXIT_SUCCESS);
-}
 
 
+
+*/
 #include "philosophers.h"
 
