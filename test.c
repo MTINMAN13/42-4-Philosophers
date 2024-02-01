@@ -116,6 +116,7 @@ void *philosopher_thread(void *arg) {
             exit(0);
         }
 
+		free(arg); // TO prevent leakerinos, as i use PTHREAD_MUTEX_INITIALIZER
         usleep(time_to_sleep);
     }
 }

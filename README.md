@@ -1,6 +1,15 @@
 # 42-4-Philosophers
 from Greek, philosophia, literally "love of wisdom")
 
+while working on the sleep state, i want to know if i
+should refference the different states at the end of each one,
+thus forming an effective circle, or rather abolishing this organic
+form for a centrally controlled unit, which is assigning the sleep, eat
+rave, repeat cycle from core, having it more sterile and compartmentalized
+
+--
+
+
 
 Account Holder:       Sammelkartenmarkt
 IBAN:                 DE80100400000107541500
