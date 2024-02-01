@@ -1,3 +1,7 @@
+(Deadlock)[https://en.wikipedia.org/wiki/Deadlock]
+- key takeaway - 4 Coffman Conditions (E.G.Coffman, 1971)
+
+
 # 42-4-Philosophers
 from Greek, philosophia, literally "love of wisdom")
 
