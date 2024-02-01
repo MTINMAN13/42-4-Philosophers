@@ -1,4 +1,4 @@
-(Deadlock)[https://en.wikipedia.org/wiki/Deadlock]
+[Deadlock](https://en.wikipedia.org/wiki/Deadlock)
 - key takeaway - 4 Coffman Conditions (E.G.Coffman, 1971)
 
 
