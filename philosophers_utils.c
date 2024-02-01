@@ -6,7 +6,7 @@
 /*   By: mman <mman@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:25:06 by mman              #+#    #+#             */
-/*   Updated: 2024/01/27 00:51:01 by mman             ###   ########.fr       */
+/*   Updated: 2024/02/01 15:14:49 by mman             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,38 +40,28 @@ int	ft_atoi(const char *str)
 	return (result);
 }
 
-int	ft_mutex_trylock(t_custom_mutex *custom_mutex)
+size_t	ft_get_current_time(void)
 {
-	if (custom_mutex->is_locked)
-	{
-		return (EBUSY);
-	}
+	struct timeval	time;
 
-	pthread_mutex_lock(custom_mutex);
+	if (gettimeofday(&time, NULL) == -1)
+		write(2, "gettimeofday() error\n", 22);
+	return (time.tv_sec * 1000 + time.tv_usec / 1000);
+}
+
+// Improved version of sleep function, by RUINADD on github
+int	ft_usleep(size_t milliseconds)
+{
+	size_t	start;
+
+	start = ft_get_current_time();
+	while ((ft_get_current_time() - start) < milliseconds)
+		usleep(500);
 	return (0);
 }
 
-// int	ft_mutex_trylock(t_custom_mutex *mutex)
-// {
-// 	while (1)
-// 	{
-// 		if (pthread_mutex_lock(mutex) == 0)
-// 			return (0);  // Successfully acquired the lock
-// 		else if (errno == EBUSY)
-// 			return (EBUSY);
-// 		// continue ;  // The mutex is busy, continue spinning?
-// 		else
-// 			return (-1);  // An error occurred during locking
-
-// 		// You can insert a short delay here if desired
-// 		// to reduce CPU usage during the spinning loop.
-// 		// For example: usleep(1000); // Sleep for 1 millisecond
-// 	}
-// }
-
-
-
-long long int	ft_get_time(void)
+// flexible all purpose get_time
+size_t	ft_get_time(void)
 {
 	static struct timeval	start_time;
 	static int				initialized;
