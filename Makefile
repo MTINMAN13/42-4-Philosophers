@@ -18,7 +18,7 @@ INCLUDE = include
 
 # Sources
 SRC_FILES = philosophers \
-			philosophers_utils
+			philosophers_utils philosophers_states philosophers_forks \
 
 SRC = $(addsuffix .c, $(SRC_FILES))
 OBJ = $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(SRC_FILES)))

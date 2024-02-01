@@ -6,120 +6,51 @@
 /*   By: mman <mman@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 17:52:25 by mman              #+#    #+#             */
-/*   Updated: 2024/01/13 15:48:13 by mman             ###   ########.fr       */
+/*   Updated: 2024/01/27 01:20:05 by mman             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-// https://www.youtube.com/watch?v=d9s_d28yJq0&list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2
-
-/* Memory Manipulation:
- *   memset: Set a block of memory to a specific value.
- *   malloc: Allocate a specified number of bytes of memory.
- *   free: Deallocate memory previously allocated by malloc.
- *
- * Output:
- *   printf: Print formatted output to the standard output stream.
- *   write: Write data to a file descriptor.
- *
- * Process Control:
- *   fork: Create a new process by duplicating the calling process.  (BONUS ONLY)
- *   kill: Send a signal to a process or a group of processes.       (BONUS ONLY)
- *   waitpid: Wait for a specific child process to terminate.        (BONUS ONLY)
-
- *   exit: Terminate the calling process.
- *
- * Threading:                                       (REGULAR ONLY)
- *   pthread_create: Create a new thread.           (REGULAR ONLY)
- *   pthread_detach: Detach a thread, allowing it to run independently.     (REGULAR ONLY)
- *   pthread_join: Wait for a thread to terminate.                          (REGULAR ONLY)
- *
- *
- * 	--> Mutexes are short for 'mutual exclusion'
- * 		pthread_mutex_init: Initializes a mutex before it can be used.
-		pthread_mutex_destroy: Destroys a mutex when it is no longer needed.
-		pthread_mutex_lock: Locks a mutex, allowing the calling thread to proceed
-						if the mutex is currently not locked by any other thread.
-						If the mutex is already locked, the calling thread will
-						be blocked until the mutex becomes available.
-		pthread_mutex_unlock: Unlocks a mutex, releasing it for other threads to acquire.
- *
- * Time Handling:
- *   usleep: Suspend execution of the calling thread for a specified time.
- *   gettimeofday: Get the current time and date.
- *
- * Inter-Process Communication and Synchronization:    (BONUS ONLY)
- *   sem_open: Open a named semaphore.                 (BONUS ONLY)
- *   sem_close: Close a named semaphore.               (BONUS ONLY)
- *   sem_post: Increment the value of a semaphore.     (BONUS ONLY)
- *   sem_wait: Decrement the value of a semaphore, blocking if necessary.    (BONUS ONLY)
- *   sem_unlink: Remove a named semaphore from the system.                   (BONUS ONLY)
- *
- */
-
+#include "philosophers.h"
 
 /*
- * Your program should take the following arguments:
- *   number_of_philosophers time_to_die time_to_eat time_to_sleep
- *   [number_of_times_each_philosopher_must_eat]
- *
- * - number_of_philosophers: The number of philosophers and also the number
- *   of forks.
- * - time_to_die (in milliseconds): If a philosopher doesn’t start eating
- *   time_to_die milliseconds since the beginning of their last meal or the
- *   beginning of the simulation, they die.
- * - time_to_eat (in milliseconds): The time it takes for a philosopher to eat.
- *   During that time, they will need to hold two forks.
- * - time_to_sleep (in milliseconds): The time a philosopher will spend
- *   sleeping.
- * - number_of_times_each_philosopher_must_eat (optional argument): If all
- *   philosophers have eaten at least
- *   number_of_times_each_philosopher_must_eat times, the simulation stops. If
- *   not specified, the simulation stops when a philosopher dies.
- *
- *
- *  (in milliseconds)
- *
- */
 
-/*
-The specific rules for the mandatory part are:
-
-• Each philosopher should be a thread.
-
-• There is one fork between each pair of philosophers. Therefore, if there are several
-philosophers, each philosopher has a fork on their left side and a fork on their right
-side. If there is only one philosopher, there should be only one fork on the table.
-
-• To prevent philosophers from duplicating forks, you should protect the forks state
-with a mutex for each of them.
-
-
-+ • Global variables are forbidden!
-+
+Any state change of a philosopher must be formatted as follows:
+◦timestamp_in_ms X has taken a fork
+◦timestamp_in_ms X is eating
+◦timestamp_in_ms X is sleeping
+◦timestamp_in_ms X is thinking
+◦timestamp_in_ms X died
 */
 
+pthread_mutex_t forks[MAX_PHILOSOPHERS] = { PTHREAD_MUTEX_INITIALIZER };
+pthread_t philosophers[MAX_PHILOSOPHERS];
+struct timeval last_meal_time[MAX_PHILOSOPHERS];
 
-int main(void)
+int	number_of_philosophers = 6;
+
+void	*ft_philosopher_thread(void *arg, pthread_mutex_t forks
+	, pthread_t philosophers)
 {
-	return (EXIST?);
+	int			philosopher_id;
+
+	philosopher_id = *(int *)arg + 1;
+	while (1)
+	{
+		ft_forks_try_state(forks, philosopher_id);
+		if (1)
+		{
+			ft_eating_state(philosopher_id);
+			// ft_forks_release();
+			ft_sleep_state(philosopher_id, time_to_sleep);
+		}
+		ft_thinking_state(philosopher_id);
+		ft_death_check(philosopher_id);
+		ft_ending(philosopher_id);
+	}
 }
 
-
-
-// - create a thread (PHILOSPHER)
-// - fork this thread (AMOUNT OF PHILOSOPHERS)
-// - each PHILOSOPHER creates a fork
-// - when philosopher picks up a fork, it is mutexed
-// - when philospher picks up two forks, they start eating
-// - when they finish, they go to sleep (and they )release both forks
-// - when they finish sleeping, they start thinking
-// - when they think for time_to_die since last time, when they ate (or simulation start) they die (ending simulation)
-// (Each fork needs to be correctly picked up, On the right and on the left)
-
-// - philosophers dont speak with others, so no fork putdowns, or no begging
-// - forks are in the middle
-// - available fork (number) is represented by a semaphore
-// - main process is XY
-// - each philosopher is a process
-
+int	main(void)
+{
+	printf("%lli", ft_return_time());
+	return (EXIT_SUCCESS);
+}

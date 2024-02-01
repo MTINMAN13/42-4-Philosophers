@@ -19,7 +19,6 @@ pthread_t philosophers[MAX_PHILOSOPHERS];
 struct timeval last_meal_time[MAX_PHILOSOPHERS];
 pthread_mutex_t print_mutex = PTHREAD_MUTEX_INITIALIZER;
 int *eat_counter;
-
 int number_of_philosophers = DEFAULT_NUMBER_OF_PHILOSOPHERS;
 long time_to_die = DEFAULT_TIME_TO_DIE;
 long time_to_eat = DEFAULT_TIME_TO_EAT;
@@ -56,9 +55,8 @@ void *philosopher_thread(void *arg) {
         print("Philosopher %d is thinking.\n", philosopher_id);
 
         if (pthread_mutex_trylock(&forks[left_fork]) == 0) {
-            print("Philosopher %d picked up left fork.\n", philosopher_id);
-
             if (pthread_mutex_trylock(&forks[right_fork]) == 0) {
+					print("Philosopher %d picked up left fork.\n", philosopher_id);
                 print("Philosopher %d picked up right fork. Starting to eat.\n", philosopher_id);
                 gettimeofday(&last_meal_time[philosopher_id], NULL);
                 print("Philosopher %d is eating.\n", philosopher_id);
