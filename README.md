@@ -1,6 +1,7 @@
 [Deadlock](https://en.wikipedia.org/wiki/Deadlock)
+[PTHREAD_MUTEX_INITIALIZER](https://stackoverflow.com/questions/14320041/pthread-mutex-initializer-vs-pthread-mutex-init-mutex-param), 
 - key takeaway - 4 Coffman Conditions (E.G.Coffman, 1971)
-
+- key takeaway - PTHREAD_MUTEX_INITIALIZER, suitable alternative for .._init and .._destroy 
 
 # 42-4-Philosophers
 from Greek, philosophia, literally "love of wisdom")
