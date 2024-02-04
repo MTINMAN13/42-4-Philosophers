@@ -1,9 +1,18 @@
+<h1 align="center">
+	📖 Philosophers
+</h1>
+
 [Deadlock](https://en.wikipedia.org/wiki/Deadlock)
 
 
 [PTHREAD_MUTEX_INITIALIZER](https://stackoverflow.com/questions/14320041/pthread-mutex-initializer-vs-pthread-mutex-init-mutex-param), 
 - key takeaway - 4 Coffman Conditions (E.G.Coffman, 1971)
-- key takeaway - PTHREAD_MUTEX_INITIALIZER, suitable alternative for .._init and .._destroy 
+- key takeaway - PTHREAD_MUTEX_INITIALIZER, suitable alternative for .._init and .._destroy
+
+([good resolution diagram](https://www.zupimages.net/up/20/38/cp71.png))
+
+![alt text](https://zupimages.net/up/20/38/is7q.png)
+
 
 # 42-4-Philosophers
 from Greek, philosophia, literally "love of wisdom")
